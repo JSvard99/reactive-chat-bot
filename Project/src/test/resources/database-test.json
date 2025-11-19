@@ -1,0 +1,26 @@
+{
+    "responses": {
+        "joke": [
+            "Insert joke here",
+            "Another joke",
+            "Wow! Yet another joke"
+        ],
+        "capsTrue": [
+            "Okay, will now shout!",
+            "Shouting enabled!",
+            "Another shout message here please please!"
+        ],
+        "capsFalse": [
+            "Stopping shouting!"
+        ],
+        "changeName": [
+            "Ok, changing name"
+        ],
+        "noResponse": [
+            "I dont know what to say to that..."
+        ],
+        "greeting": [
+            "Hello!"
+        ]
+    }
+}
