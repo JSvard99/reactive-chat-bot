@@ -1,307 +1,150 @@
-[![MIUN DT176G][course_badge]](https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT176G/)
+# Screenshots
 
-![Version](https://img.shields.io/static/v1?label=version&message=1.0&color=b34700)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
-[![JetBrains][jetbrains_badge]](https://www.jetbrains.com/student/)
-[![java][java_badge]](https://docs.oracle.com/en/java/javase/17/)
-[![vcs][git_badge]](https://git-scm.com/)
-[![Bitbucket][bitbucket_badge]](https://git-scm.com/)
-[![made-with-Markdown][md_badge]](http://commonmark.org)
+![](screenshots/reactive-bot-1.png)
 
-[course_badge]: _RepoResources/img/badge_miun.png
-[java_badge]: https://img.shields.io/badge/-17-blue&style=flat?logo=java&logoWidth=20&labelColor=black&logoColor=white&color=blueviolet
-[git_badge]: https://img.shields.io/badge/-Git-blue&style=flat?logo=git&logoWidth=20&labelColor=black&logoColor=white&color=blueviolet
-[bitbucket_badge]: https://img.shields.io/badge/-Bitbucket-blue&style=flat?logo=Bitbucket&logoWidth=20&labelColor=black&logoColor=white&color=blueviolet
-[md_badge]: https://img.shields.io/badge/-Markdown-blue&style=flat?logo=markdown&logoWidth=20&labelColor=black&logoColor=white&color=blueviolet
-[jetbrains_badge]: https://img.shields.io/badge/-IntelliJ-blue&style=flat?logo=jetbrains&logoWidth=20&labelColor=black&logoColor=white&color=blue
+![](screenshots/reactive-bot-2.png)
 
+![](screenshots/reactive-bot-3.png)
 
------------
+# Final Project
 
-# Student Assignment Solutions
-This is your personal student repository which will be used to submit solutions for the course's lab assignment, 
-as well as its final project. This repo is completely private, meaning none other than you and the teachers have access 
-to it. As you've completed a particular assignment and wish to have its solution evaluated, you'll need to perform a 
-formal hand-in using the dedicated submission box in Moodle. Nothing should be attached to this submission in Moodle, 
-as the current solution state will be fetched from this repository. So make sure to synchronize any local changes with 
-**remote origin** before submission.
+## Environment & Tools
 
-Just as in previous courses you're encouraged to isolate development to dedicated branches, and only merge with 
-**master** upon submitting your solution for evaluation. This will enable greater degree of experimentation since the 
-stable states are preserved, and readily available at all times. Do note that evaluations will only be performed on the 
-solutions available in this **master** branch, which for our purposes is regarded as the _**release branch**_.
+The practical work of this project was performed on a HP-laptop with Windows 11. Java 23 2024-09-17 was used as the programming language with VSCode 1.96.2 as the IDE, Apache Maven 3.9.9 was used as the build system, git version 2.46.0.windows.1 was used for version control.
 
-> _Please write a short presentation in the dedicated section at the end of this document!_
+## Purpose
 
--------
+The purpose of this project is to develop a simple chat bot using a declarative approach to writing code. More specifically the code should adhere to reactive and functional programming principles. To achieve this the the use of streams will be utilised for the functional code and for the reactive code RxJava will be utilised.
 
-## Structure of Repository
+This solution aims for the C-grade and below are 12 requirements that each should be fulfilled, the requirements are taken and somewhat rewritten from the project description.  
 
-````
-studid_solutions/   (1)
-  _playground/      (2)
-  _RepoResources/   (3)
-  Examples          (4)
-  Exercises         (5)
-  Laboration/       (6)
-  Project/          (7)
-  .gitignore        (8)
-  pom.xml           (9)
-  README.md         (10)
-````
+List of the concrete goals for this project:
 
-````
-Laboration/         (11)
-  src/main/         (12)
-    /resources/     (13)
-  src/test/         (14)
-    /resources/     (15)
-  pom.xml           (16)
-  README.md         (17)
-````
+- The Observable & Observer pattern should be used to handle the flow of the input and responses in the program.
 
-1. Root of repository.
-2. All contents in this folder will be ignored by version control, as long as the ``.gitignore``
-   remains untouched. This is a good place to just play around with scripts, which are not meant to be viewed by others.
-3. General resources for the repository, not to be confused with resources for tests and / or Java.
-   An example of usage can be seen at the top of this document, where an image is pulled from **``/img/badge_miun.png``**.
-4. Folder container all examples. Take note of the structure, where we use submodules for the examples.
-5. Folder for all exercises in the course.
-6. Directory for laboration content, further explained in points ``9 - 13``. Note that the same structure is used for 
-   the final project.
-7. Directory for final project. Further details surrounding the structure will be explained once the assignment has 
-   been published.
-8. Patterns to be ignored from version control, such as project files generated by the IDE. Existing contents of this 
-   file should be general enough to cover most circumstances, but feel free to add more if the need arises.
-9. The parent Maven script. Note that we use a distributed system, where we have subscripts in each module.
-10. The document you're currently reading.
-11. Main directory for assignment content, where 'X' indicate a sequence number for the laboration. There are a total of 
-   four assignments in the course and each one represents a nested Maven module within the parent project.
-12. This is where you store java files and resources needed for the solutions. Note that source documents
-    (**``.java``**) needs to be placed under folder **``java``**, which is explicitly marked as **Sources Root**, and
-    its package name. Ex: **``java/com/dt176g/laboration/Lab.java``**.
-13. Root resource folder. This is where you add resources which are important to the application, such as images and 
-    data files. Note that these resources will be bundled inside the JAR, so only read-access is allowed. You also need 
-    to make sure to load resources properly using class loader. 
-14. This is where we place unit tests. The use of unit tests are not mandatory, but strongly recommended. The structure 
-    enables you to add tests as you wish, but you need to be the one writing them. 
-15. Root test resource folder. Same as for source files, but for testing purposes. 
-16. Maven script for the lab module, deriving from parent **``pom.xml``** in project root.
-17. **README** which needs to contain a written report, in conformity to requirements which are stated in the study 
-    guidance.
+- RxJava operators should be used and chained to manipulate the data in the program.
 
+- Some combining of Observables should be used in the program to merge two Observables together.
 
---------------
+- Some form of multicasting should be used in the program, aswell as subjects.
 
-## Markdown in Reports
-Bitbucket offers very limited support for HTML-tags so you need to avoid them, and instead fully rely on ordinary
-[**Markdown syntax**](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). For example, if you would
-like to present some code in your lab reports you should not enclose it within **``<pre>``**. The same goes for tags
-used to structure content, such as **``<center>``**. If you really want more control over the presentation, you should
-instead utilize stylesheets (**``.css``**) as we did in DT179G, but it's not needed as plain Markdown will suffice.
+- Schedulers should be used as to not block the main thread.
 
-In general, you shouldn't include much code in your reports as it represents implementation details which would not
-scale well with a larger project. It will also add redundancies since we already have access to the solution, and you
-can easily imagine how bloated the report becomes if all code is repeated. However, in some situations it can be
-justified to include some snippets to illustrate an approach or to strengthen a case.
-But be sure to use proper Markdown:
+- Buffering and throttling should be used in the program to handle, group or manage fast inputs. Switching should also be present with the `switchMap` operator.
 
-````java
-public class ShowCase {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
-}
-````
+- The program should have some use of flowable with appropriate backpressure strategy.
 
---------------
+- The program should adhere to the functional programming paradigm in where statelessness and immutability are main factors of this. The use of streams from the streams api should also be present.
 
-## Maven
-As in DT180G we'll rely heavily on Maven throughout the course, but won't dive into the
-specifics since it doesn't fit within the current course scope. Build / management tools such as Maven is a rather vast
-subject to cover, and since it's strictly governed by a large set of rules one would also need to reach some proficiency
-with its declarative syntax. In order to learn any new technology it's always important to strip away complexities and
-start from the very fundamentals. This repo uses a modularized implementation, of one base project and multiple
-sub-projects, which makes its structure unsuitable as learning material.
+- The program should handle errors correctly using the tools available from RxJava.
 
-The modularized structure you find in this repo is in a _**somewhat**_ stable state, and will have improved
-once we reuse it for later iterations. We have a parent **``pom.xml``** in the main root which declares dependencies,
-build process, and report generations to be used in our sub modules. These sub modules will have their own
-**``pom.xml``** that inherits the configurations from the parent script. There shouldn't be any reason for you to
-change anything in these documents, and the current structure has been verified to work in both Windows 10 and
-OSX Big Sur running **``openjdk 15.0.2``** and **``Apache Maven 3.6.3``**.
+- The chat bot should be easy to use with instructions present for the user.
 
-Maven builds follow specific life cycles, which in turn are constituted out of multiple phases which are exectuted
-in sequence. There are three built-in life cycles:
+- The project needs to adhere to Mavens inherent structure and created files needs to be placed in appropriate subpackages. Created modules/classes also needs proper documentation, this also applies to packages.
 
-- **default**: the main life cycle as it's responsible for project deployment. Consists of 23 phases in total.
-- **clean**: to clean the project and remove all files generated by the previous build. Consists of 3 phases in total.
-- **site**: to create the project's site documentation. Consists of 4 phases in total.
+- The project should not be overly simplified and the work done should mirror the time remaining in the course.
 
-### Phases
-A Maven phase represents a stage in the Maven build lifecycle. Each phase is responsible for a specific task. Here are
-some of the most important phases in the default build lifecycle:
+## Procedures
 
-- **validate**: check if all information necessary for the build is available
-- **compile**: compile the source code
-- **test-compile**: compile the test source code
-- **test**: run unit tests
-- **package**: package compiled source code into the distributable format (jar, war, …)
-- **integration-test**: process and deploy the package if needed to run integration tests
-- **install**: install the package to a local repository
-- **deploy**: copy the package to the remote repository
+Note: *Since this project follows functional programming principles classes and other entities will be refered as modules and methods will be refered to as functions. Even though this does not conform to the normal java terminology it is more in line with functional programming terminology and makes sense in this context. This will be the case in the discussion aswell*'
 
-> _For the full list of each lifecycle's phases, check out the [**Maven Reference**][Maven_Ref]._
+At first a rough plan for the project was thought up of what modules/parts was needed to make a functional chatbot. It was quite quickly decided that the crucial parts were to be input handler, output handler, response generator and a engine/coordinator. Additional features were decided to be worked on after these crucial parts have been implemented and firmer grasp on the time requirements had been established.
 
-Phases are executed in a specific order. This means that if we run a specific phase using the command
-**``mvn <PHASE>``** it won't only execute the specified phase but all the preceding phases as well. For example,
-if we run the deploy phase **``mvn deploy``**, which is the last phase in the default build lifecycle, that will
-execute all phases before the deploy phase as well, which is the entire default lifecycle.
+First the input and output were implemented. Both of these use the CLI to get and print the data. The input is a method that returns a observable where each emission is an read line from a scanner, later this was changed to a flowable to adhere to the requirements of the project. The output just uses print line function to print the passed in response, later when chat context was added this was also passed in to format the output.
 
-[Maven_Ref]: https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
+Next the `JSONUtil` module was created which handles access to the database. A feature where users could be created, deleted and updated was worked on and later scrapped to keep in line with requirements on statelessness and side effects. This class still handles the feature to get a response based on a keyword. It finds a response based on the seed passed in so the response can be different each time.
 
-### Goals
-Each phase is a sequence of goals, and each goal is responsible for a specific task. When we run a phase, all
-goals bound to this phase are executed in order. Here are some of the phases and default goals bound to them:
+Next on the logic for response generation was implemented. At this point the `Constants` module was also created to hold regular expressions that could be matched to input, this is stored as a map so a keyword is then returned that is used in the `JSONUtil` module. The `generateResponse` returns a `Maybe` based on if a response is returned or not, earlier implementations returned an empty `Maybe` if no response was found but later on it now returns a line for this aswell so it is only empty if a error occured which is handled downstream in the engine. This module also has a private function using streams to check the input for regex matches and then returning those keywords, this function is used in a map in `generateResponse`.
 
-- **compiler:compile** the compile goal from the compiler plugin is bound to the compile phase
-- **compiler:testCompile** is bound to the test-compile phase
-- **surefire:test** is bound to test phase
-- **install:install** is bound to install phase
-- **jar:jar** and **war:war** is bound to package phase
+Next a first iteration of the chat engine module was implemented which creates a `Subject` that handles input as sort of a bus, right now it only handles responses. The engine takes in output and input as `Supplier` and `Consumer` functions which are functional interfaces available in the `java.util.function` package. The input is also published so that in later implementations the action handler can also observe those emissions.
 
-We can list all goals bound to a specific phase and their plugins using the command
-**``mvn help:describe -Dcmd=PHASENAME``**. For example, to list all goals bound to the **site** phase, we can
-run **``mvn help:describe -Dcmd=site``** which would output info such as:
+Next on was to crete the action handler, which will handle the shout/caps functionality and the name change of the bot. The action handler has a response generator wich is quite similar to `generateResponse` except that this generates responses for if an action was requested by the user. If a name change is requested it sends this requested name as a keyword and handled in the chat context observable, meaning if the chat context observable encounters a non keyword phrase it knows it is a name and changes it. The above mentioned chat context was also implemented at this time which emits a chat context record and emits a new one if a change is requested by the user. The change can be either a name change of the bot or a request for the bot to stop/start shout/use caps.
 
-````
-'site' is a phase within the 'site' lifecycle, which has the following phases: 
-* pre-site: Not defined
-* site: org.apache.maven.plugins:maven-site-plugin:3.3:site
-* post-site: Not defined
-* site-deploy: org.apache.maven.plugins:maven-site-plugin:3.3:deploy
-````
+Next a small tweak was added so that the bot buffers input a bit. This is only so the bot does not respons immideatly, but restarts the buffer on each input from the user so called "bursty inputs" and then waits a short time before outputting the response. This is done so the user can type several fast messages and the bot responding to all of them after the user is done typing which feels more natural. The technique to acheve this was suprisingly complex requiring both debouncing and buffering, but the decided approach was found in the RxJava documents here: [Buffer Reactive Docs](https://reactivex.io/documentation/operators/buffer.html) as the last example under RxJava 1.X.
 
-### Maven Plugins
-A Maven plugin is a group of goals. However, these goals aren't necessarily all bound to the same phase. We can
-infact control these details to a high degree by encapsulating plugins within specific tags in our **``pom.xml``**.
-The tag **``<build>``** is used for plugins which are involved in our compilation of **``.jar``** files, while
-those declared within **``<reporting>``** will be tied to our site phase.
+At this point all the main modules were in place and from here on adjustments to these modules were the main focus. First up was to add schedulers to the `Observables`. A mix of `observeOn` and `subscribeOn` was used to achieve the desired result, and the main scheduler was io, which is not suprising since there is a lot of io in the program.
 
-- [**maven-site-plugin**][site_plugin]: The Site Plugin is used to generate a site for the project. The generated site
-  also includes the project's reports that were configured in the POM.
-- [**maven-project-info-reports-plugin**][project_info_plugin]: The Maven Project Info Reports plugin is used to
-  generate reports information about the project.
-- [**maven-javadoc-plugin**][javadoc_plugin]: The Javadoc Plugin uses the Javadoc tool to generate javadocs for the
-  specified project. For more information about the standard Javadoc tool, please refer to [**Reference Guide**][javadoc_ref].
-- [**maven-checkstyle-plugin**][checkstyle_plugin]: The Checkstyle Plugin generates a report regarding the code style
-  used by the developers. For more information about Checkstyle, see [**its official homepage**][checkstyle_ref].
-- [**maven-surefire-plugin**][surefire_plugin]: The Surefire Plugin is used during the test phase of the build
-  lifecycle to execute the unit tests of an application. It generates reports in two different file formats: **``.txt``** and **``.xml``**.
-- [**maven-surefire-report-plugin**][surefire_report_plugin]: The Surefire Report Plugin parses the generated
-  ``TEST-*.xml` files under **``${basedir}/target/surefire-reports``** and renders them using DOXIA, which creates the
-  web interface version of the test results.
-- [**maven-jar-plugin**][jar_plugin]: This plugin provides the capability to build jars.
-- [**maven-compiler-plugin**][compiler_plugin]: The Compiler Plugin is used to compile the sources of your project.
-- [**maven-project-info-reports-plugin**][project_info_reports_plugin]: The Maven Project Info Reports plugin is used
-  to generate reports information about the project.
+Next, the input observable was remade to a flowable to be in line with the requirements.
 
+Then a response for if the response generation could not find any keywords for either actions or regular responses were added. At that point the response generator adds a no response keyword wich can than in turn be looked up in the json database.
 
-[site_plugin]: https://maven.apache.org/plugins/maven-site-plugin/
-[project_info_plugin]: https://maven.apache.org/plugins/maven-project-info-reports-plugin/
-[javadoc_plugin]: https://maven.apache.org/plugins/maven-javadoc-plugin/
-[javadoc_ref]: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html
-[checkstyle_plugin]: https://maven.apache.org/plugins/maven-checkstyle-plugin/
-[checkstyle_ref]: https://checkstyle.org/
-[surefire_report_plugin]: https://maven.apache.org/surefire/maven-surefire-report-plugin/
-[jar_plugin]: https://maven.apache.org/plugins/maven-jar-plugin/
-[compiler_plugin]: http://maven.apache.org/plugins/maven-compiler-plugin/
-[project_info_reports_plugin]: https://maven.apache.org/plugins/maven-project-info-reports-plugin/
-[surefire_plugin]: https://maven.apache.org/surefire/maven-surefire-plugin/
+Next the error handling was lighty updated. Some error handling were already present but here it was just made a bit more robust.
 
-### The Commands We Will Use
-For our purposes we'll mostly rely on the phases **``clean``**, **``verify``**, and **``site``**. All output
-generated from these phases, and their inherent goals, will be placed under directory **``target/``**, for which
-there are one for each module. Since their contents will be generated on local systems, they are excluded from
-version control. It will be a good idea to always include **``clean``** for any commands you run, since it will
-remove lingering files from previous output. Simply running **``mvn clean``** from repo's root will effectively
-delete all **``target/``** in the project hierarchy.
+The private methods to get regex matches were then made to only use streams to more adhere with functional programming, as previously they used some mutable variables and imperative concepts.
 
-#### mvn site
-The aim has been to minimize the amount of Maven commands you need to learn and in terms of generating reports
-we've consolidated **JavaDoc**, **Checkstyle**, and **Surefire** under the shared **``site``** goal. If you run
-**``mvn clean site``** from the repo's root this will traverse all modules and generate reports for these plugins,
-and link necessary pages to one another. You can open the generated site pages from the root's **``target/``**:
+Then, some small refactorings such as renaming things, especially lambda parameters, were done to make the code more readable. The feature of format document present in VSCode was also used so that all files were formatted equally. After this documentation was added to all entitites along with package documentation.
 
-````
-/target/site/index.html
-````
+After this a conversation option to have a conversation with state using declarative principles was implemented. These changes where made in the response generator. But first a record was implemented to hold the both the conversation state and the input from the user to keep track of. The `generateResponse` function was altered to use `defer` to see if the bot should respond with a simple response as previous implementation does or instead use the `getStateConversationResponse` to get a response based on the state of the conversation and what the user have previously entered. To keep track of the conversation state a behaviour subject was used so that the latest value could be obtained to see the current state and to also push new state to it when necessary. The conversation using states is for the user to order some clothing product and then choosing the color and size of this with some pre defined options.
 
-When you open this page in a browser you'll find some general information about the project and its modules,
-but the important stuff will be under **Project Reports**, accessed from the navigation menu to the left.
-Under the **Overview** of this page you'll find two reports: **JavaDoc** and **Surefire Report**. Both of these
-contains information which has been aggregated from each sub module in the project, where the first contains
-documentation of packages, classes, interfaces and methods, while the latter contains outcomes from running unit
-tests. Both of these report types will be relevant once you've progressed into the third and fourth learning
-modules in the course.
+`getStateConversationResponse` uses a reactive stream to query the user for the appropriate input based on the conversation state and then validates that input before updating the state and waiting for the next user input. After all the queries are done the result of "order" is shown to the user. During all this time the user can also cancel the order to get back to "regular" conversation with the bot. The chat engine was slightly altered to create this conversation state subject and to pass it through the reactive stream to `generateResponse`.
 
-You can also see that one report seems to be missing from this main overview. The plugin **Checkstyle** has been
-configured to be inherited to each sub module, not aggregated as the other two, which means that its reports can
-only be accessed from each sub module's **``target/``**:
+Next this conversation using state was expanded to also allow the user to enter some simple calculation which the bot then calculates and displays the result. Here just as before it validates the input and the user can choose two numbers between 1 and 999 and some operator of add, subtract, multiply and divide. Then the calculation is done and the result is shown to the user. Just as before the user can cancel this conversation at any time and return.
 
-````
-/target/site/checkstyle.html
-````
+Next a GUI was implemented using Java swing. The GUI consists of one text area where the chat is displayed, one text area where the user can enter their input and one send button to send the inputted message, the user can also send messaged by pressing the enter key. This view is present in the `ChatBotView` module.
 
-It would of course be nice if these reports also were included in the main aggregation, and perhaps we can
-find a way to make it possible for the upcoming course **DT181G**. In the mean time, just be aware that these
-reports has a different placing. Also note that we use **``sun_checks.xml``** for our linting purposes, which
-can be somewhat pedantic about certain issues. For instance, it will raise warnings about line lengths exceeding
-**``80``** characters and that **``private``** data members lacks documentation. These two issues can mostly be
-ignored since you would normally **not** document private members, only the shared interface (**``public``** and
-**``protected``**). When it comes to line lengths, there are of course limits... but as long as you restrict to
-a maximum of **``120``** characters it will be fine.
+After that GUI window was implemented functions where needed to get the input as a flowable from the input text box and to print any response to the chat window. These are also present in the `ChatBotView` module. The function to get the input flowable also handles the clearing of the input text box and printing what the user wrote to the chat window. These functions are simply passed in to the chat enginge, which has been renamed to `ChatEngine`, since the engine simply takes in the output and input functions.
 
-> _When generating JavaDoc, Maven may throw an **``ERROR``** stating broken link to **``javadoc-bundle-options``**.  
-> You may ignore this error since it regards creation of JavaDoc **``jar``** for publishing to Maven repositories._
+Then, finally for the coding part a function to exit the program in a controlled manner was added. Since there is already a function for the bot to say goodbye this was used to also terminate when the user says goodbye. This is done through a exit subject that is created in the chat engine that is passed to `generateResponse` and if the user enters goodbye, farewell, bye or bye bye the exit subjects have been subscribed to and the program is then terminated this is done in the `ChatEngine` module in the `initializeEngine` function.
 
-#### mvn verify
-In order to build our solutions to executables (**``.jar``**) we can use the Maven command **``mvn clean verify``**.
-If ran from the repo's root, this will generate a **``.jar``** for each sub module which can be found under
-respective **``target/``**. The path for **Laboration 1** would thus be:
+Then the documenation was updated and some refactorings done to improve readability, the use of reactive streams or in other ways refactor the code to a better standard. As before the format document feature of VSCode was also used to format all files correctly.
 
-````
-laboration_1/target/laboration_1-1.0-SNAPSHOT.jar
-````
+## Discussion
 
-The **maven-jar-plugin** will make sure we have included a manifest attribute stating which class should be the main
-execution. You can execute this **``.jar``** from the **``target/``** directory:
+### Purpose Fulfillment
 
-````
-java -jar laboration_1-1.0-SNAPSHOT.jar
-````
+The use of observable and observer pattern and these functionalities can be found quite extensively in the code, here follows some examples of the achievement of this goal. The user input is recieved from a flowable which is a type of observable, this is done in `Project.java` through either the `ChatBotView` and the function `getGuiInputFlowable` or through the `getCliInputFlowable` in the `CliInput` module for the GUI and CLI implementation respectively. This reactive stream observable is then used in the chat engine where the input is processed and generating output through the `generateResponse` function in the `ResponseGenerator` module. Finally, this observable is subscribed to through the output subject and the response is shown to the user. This ensures the fulfillment of this goal in that the flow of data from the user is handled using the observable/observer pattern and to process the data from the user.
 
-So, you would use the following commands with Maven:
+Same as the observable and observer discussion the fulfillment of the goal to use of RxJava operators can also be found extensively in the code. This can be confirmed by also following the input from the chat engine and through the `generateResponse` where we see multiple uses of operators such as `buffer` and `flatMapiterable` in the output subject in the chat engine. But also in the `ActionHandler` module in both `getChatContextObservable` and the private function `getActionRegexMatches` where operators such as `filter`, `scan`, `map`, `takeWhile` and `collect` are all used and chained to manipulate the data and to create readable and efficent handling of said data. These are just some examples and another would be the `generateResponse` function in the `ResponseGenerator` as was mentioned above in the observable and observer goal fullfilment discussion where other operators like `doOnNext` and `zipWith` are used and chained to handle the manipulation of the data in the program. All of the examples above show that operators have been successfully used in the program to fulfill this goal.
 
-| **Command**               | **Description**   |
-|:---|:---|
-|**``$ mvn clean``**        | _deletes all contents under 'target/'_ |
-|**``$ mvn clean verify``** | _runs tests, builds and compiles source files into 'jar'._ |
-|**``$ mvn clean site``**   | _runs tests, generates JavaDoc and reports for Checkstyle and Surefire._ |
+The goal of combining observables was achieved in the `generateResponse` function in the `ResponseGenerator` module. Here in this reactive stream the matches from `getRegexMatchesValues` are combined using `zipWith` with an observable created in the `zipWith` operator. This new observable is created to generate integers wich are used if for example multiple jokes are requested, the different integers then ensures that the seed used in the retrieval of the jokes are different and thus different jokes are returned. The two observables are combined into the `Pair` record which holds two values of some sort. That pair is then handled downstream ensuring that the two observables have combined correctly with both the matches from the original reactive stream and also from the integers from the created stream within the `zipWith` operator. Another example can be found in `initializeEngine` in the `ChatEngine` module where the `outputSubject` reactive stream uses the `withLatestFrom` operator to combine this with the latest from the observable obtained from the `getChatContextObservable` function in the `ActionHandler` module. Here also `Pair` is used to combine these observables and the succesfulness of this approach here can be verified by that the output correctly uses the data from the observable from `getChatContextObservable` to alter the output to the user, and also the original responses are intact since they can be seen printed to the users aswell.
 
-You can also make more fine grained executions by stating specific goals:
+Proof of the achevement of the goal to use multicasting can be found in `initializeEngine` in the `ChatEngine` module. Here it can observed that the goal was achieved by publishing the input, this was done in both the `generateActionResponse` function in the `ActionHandler` module and the `generateResponse` function in the `ResponseGenerator` module. The use of publishing the input here as `publishedInput` is so that both these subscribers can handle the same data from the flowable independently without multiple subscriptions to the original flowable wich could lead to independent streams of input. Then `connect` is called on that published input so that items start emitting. The achievement of the goal to use subjects can also be seen here in `initializeEngine`, first of is the `outputSubject` which is a publish subject which in this case acts as a bus to connect both the reactive streams that take the input mentioned above. The fulfillment of this goal can be asserted in that both the aforementioned reactive streams use this output subject to send their data to the `output.accept` function and that these responses are actually printed to the user when the program is running ensuring that this subject works. Another subject present in the `initializeEngine` function is the `conversationStateSubject` which is a behaviour subject used to keep track of the current state of the conversation, the reason it is a behaviour subject is so that the latest value emitted can be retrieved and can then be examined in the `generateResponse` function to see what state the conversation is in. The use of a subject here is also important so that `onNext` can be called on it to emit a new conversation state when it needs to be updated.
 
-````
-$ mvn javadoc:javadoc         # only generate JavaDocs
-$ mvn checkstyle:checkstyle   # only run code linting
-$ mvn surefire:test           # only run unit tests
-````
+The goal of using schedulers in the reactive streams to efficently handle concurrency and parallelization can be found by following the input data through the program. In the functions `getCliInputFlowable` and `getGuiInputFlowable` in the `CliInput` and `ChatBotView` module respectively, it can be observed that `subscribeOn` is used to tell the subscribers of these observables which thread to perform the subscription on, this ensures that this thread is used and thus not blocking the main thread. Then in `initializeEngine` in the `ChatEngine` module the output subject uses three `observeOn` calls in the stream to switch the operation downstream to use the specified scheduler, in this case it switches to the io scheduler to handle call the `getChatContextObservable` and then it switches to the computation scheduler to do handle the `buffer` and `flatMapIterable` operators which in this case performs more computationally "intensive" tasks which is why this scheduler is prefered here. Then it switches back to the io thread to handle if an error occurs which is printed and then it is subscribed to. The two reactive streams from the published input also uses observe on to make sure the downstrem operations are done on the io scheduler which is fitting for the work they do which are io related. These calls to `observeOn` and `subscribeOn` make sure the goal if fulfilled and that the main thread is not blocked.
 
---------------
+The goal of using buffering and throttling was accomplished by buffering the user input in the output subject in the `initializeEngine` in the `ChatEngine` module. The `buffer` operator in turn uses the `debounce` operator, which is a form of throttling, on the published input as the input for the buffer, meaning that the output subject buffers based on the debounced observable on the published input with a time limit of 1500 ms. This has the effect that the bot does not respond until the user has stopped inputting messages for 1500 ms. To verify that this work we can type multiple fast messages to the bot and see it does not respond until it has not recieved a message for a short time, 1500ms in this case. This shows that both buffering and throttling have been used sucessfully in the program. The related goal in this requirement to use `switchMap` is sadly not present in the program. A good bit of work was put into this feature where the thought was that a switch would be made to an observable that emits idle messages if the input does not emit for an amount of time. This did not reach a satisfying workable state where it felt very hacky implemented and lots of issues appeared else where beacuse of this so it was finally scrapped. However the goal to use switching is fulfilled in `getStateConversationResponse` in the `ResponseGenerator` module. Here `switchIfEmpty` is used to send a invalid string constant if no valid input was sent by the user. This ensures that the bot responds with a message informing the user of that the input was not valid and does not update the conversation state. This achieves the goal of switching source to another if the need for it arises which in some way accomplishes the goal of using switching even if `switchIfEmpty` was used instead of `switchMap`.
 
-## About the Author
-Please write a short presentation. Suitable content would be...
+The goal to use flowable and appropriate backpressure strategy was achieved by employing flowable as the user input observable. This can be observed in `getCliInputFlowable` and `getGuiInputFlowable` in the `CliInput` and `ChatBotView` module respectively. In both these cases it can be seen that it creates a flowable using `create` and then the respecive implementation to get the input from the user. Both displays the use of backpressure strategy, which can be seen in the creation where `create` takes in a strategy as a parameter. They both use latest as their backpressure strategy to only keep the latest value if the downstream cant keep up which is a fitting strategy for this type of chat bot, where the user probably prefers a response to the most recent input as opposed to one made longer ago. This shows that flowable is used within the program but this can also be seen in `initializeEngine` in the `ChatEngine` module where it expects a supplier consisting of a flowable that emits strings, this is where the previously mentioned flowables are passed into to handle the user input in the chat bot, thus ensuring that flowables are used in the program as was stated by the goal.
 
-- ... who you are.
-- ... previous programming experiences.
-- ... your expectations regarding this course.
+The goal of adhering to functional programming principles was achieved by firstly make sure that no instances can be created of the modules/classes. This can be observed in all the modules by observing that they have a private constructor that throws an error if it is called for example here is the `ChatEngine` constructor:
+
+    private ChatEngine() {
+            throw new IllegalStateException(Constants.CLASS_INSTANTATION_ERROR_MSG);
+    }
+
+All examples wont be shown here but this pattern is true for all the modules in the program, except for `ChatBotView` where it can not be avoided since a need to create a GUI window is in direct conflict with this requirement. This use of private constructors ensures statelessness in the design since no instances are created. Other than this all functions are also marked as static, thus ensuring that the functions do not belong to an instance of a class/module which ensures statelessness of the functions. All functions are also independent of state in that they always produce the same output for the same input, a clear example of this can be found in `initializeEngine` in the `ChatEngine` module where `generateResponse` and `generateActionResponse` in the `ResponseGenerator` and `ActionHandler` module respectively where they take in a seed as a parameter. This seed decides which response to get from the database and the same input with the same seed generates the same response thus making testing easier and also adhering to the principle that functions should always produce the same output given the same input. The seed is used so that the same response is not retrieved every time and thus ensuring variability in the program in a functional approach. Furthermore, variables are avoided as much as possible in the program where declarative concepts like streams are prefered, but in the cases where they are necessary such as in the `Constants` module they are marked static and final. Marking variables static and final ensures that they cannot be changed at runtime this ensures both statelessness and immutability. Another example of this can be found in the `ChatBotView` where all swing components are also marked static final for the same reason. All parameters for all the functions in the program are also marked final to again ensure immutability and statelessness. Examples of this can be found in every module but using `ResponseGenerator` as an example it can be observed that `generateResponse` have all parameters marked as final, this is also true for the private functions in this module which are `getRegexMatchesValues`, `getStateConversationResponse`, `getStateInput`, `performCalculation` and `updateStateSubject`. All occurences of the adherance can not be shown here as this section would be all to long and exhaustive, but these examples above show a clear adherance to the functional programming paradigm and the thought that went into these examples are prevalent throughout the program thus ensuring the program as a whole fulfills this goal. The related goal to use the streams api was fulfilled by the functions `getRegexMatchesValues` and `getActionRegexMatches` in the `ResponseGenerator` and `ActionHandler` modules respectively. In both functions a stream is created using a call to `stream` on a key set obtained from the `Constants` module. This stream than uses operators `filter` to filter the stream to only keep the ones that match the input, `map` to change the data to keyword used in database retrieval and then collect to collect it into a list which is then returned. `getActionRegexMatches` also uses the `flatMap` operator if a name change was requested to also insert that keyword along with the name to change to into the stream. These two examples show a usage of the streams api that satisfies the mentioned requirement.
+
+The goal to handle errors using RxJava concepts was achieved by using `doOnError` and `onErrorReturnItem` in `initializeEngine` in the `ChatEngine` module. The output subject uses the `doOnError` operator to retrieve a error message and then use `output.accept` to show this error to the user. The two streams that observe the published input both use `onErrorReturnItem` to here also retrieve a error message, but here this error message is sent to the output subject which then shows this message to the user. This ensures that error occuring in any of these reactive streams are both captured and a message is then shown to the user. Another error handling method can be found in `getCliInputFlowable` and `getGuiInputFlowable` in the `CliInput` and `ChatBotView` modules respectively. Here the operator `retry` is used to resubscribe to the observable if an error occurs. This is appropriate here since if an error occurs here it would probably be wise to try again. Since both reactive streams in the chat engine handle errors it is not needed in the `generateResponse` in the `ResponseGenerator` module or `generateActionResponse` and `getChatContextObservable` since errors occuring here would be caught in the streams in `initializeEngine` with the methods mentioned earlier. These mentioned methods to handle errors sufficently handles errors correctly in the program and shows this clearly to the user with operators available in RxJava and thus fulfills the stated goal.
+
+The goal of ease of use and clear instructions for the user was achieved by first of all presenting the user with a clear welcome message highlighting some tips on what the user can talk to the bot about, it also features instrcutions on how to send messages in the GUI and how to close the program by entering goodbye or some other farewell. This welcome message also lets the user know that if "help" is typed to the bot more clear instructions will be shown to the user which displays all the possible commands/inputs the user can type to the bot and what they can expect the bot to return with. Also when making an order or a calculation it also lets the user know clearly at every step that this process can be cancelled by simply entering "cancel". This goal can be verified by as mentioned using the chatbot and it can then be observed that indeed a welcome message is shown with some simple tips and the help functionality mentioned here can also be verified by typing help to the bot where the commands/inputs are clearly shown to the user, these two features sufficently fulfills this goal that the bot is easy to use and come with clear instructions.
+
+The goal of adhering to the inherent maven structure was achieved by not altering the file structure of anything. All created modules are placed and organized into packages in the file structure based on the purpose they serve in the program. The tests are also placed under the test folder already present in the file structure from the start which follows mavens inherent structure, this is also true for the database json file wich is placed under the resources folder both in the main and the test folders. To verify this claim the file structure of the project can be observed and then it is clear that it is followed and thus the goal of following the file structure is acheved. The related goal to document each module, package and public/protected function was achieved by documenting all these entities where each module also has the author tag to clearly show who wrote this module. For the functions all potential parameters and return values are also documented what they represent and what can be expected from the functions. Here is an example from `generateResponse` in the `ResponseGenerator` module:
+
+    /**
+     * Generates a response based on the input from the user.
+     * 
+     * @param input             the input string
+     * @param conversationState the subject consisting of the conversation state
+     * @param exitSubject       the subject that indicates program exit
+     * @param seed              the seed to choose the response
+     * @param filePath          the file path to the database to be used
+     * @return the response to the input
+     */
+
+Which clearly indicates what the function does and what the parameters entail and also what the return value is. This is just an example but all public functions are documented in the same way. This can be verified by looking at the modules and it is then clear that all public functions adheres to this requirement and thus the goal of documentation is acheved. As for the goal to document each package this can be seen from the file strcuture where all packages contains a `package-info.java` file which in turn contains info of the package that this file is in, thus also fulfilling the goal of documenting each package.
+
+The goal to apply an appropriate scope to the project is quite a subjective requirement. But it can still be argued for that it was achieved. The project sufficently adheres to all the above stated requirements showing that quite some time and effort was made to accomplish this. The planning stage and all the work that was ultimately left out of the final project also account for some time even tough they are harder to verify since they are not concretly visible in the project, but still they helped lead to the final program. Some consideration should also be put into that this way of programming is not a familiar one and thus require more effort and time to produce the same results than if for example object oriented principles were to be followed. For the complexity of the program the bot now recently features two cases of conversation state where one is the order feature of the bot and the other is the calculation help that the bot can perform. Also the bot now features a GUI wich also adds complexity in how reactive streams and other reactive concepts can be used to interact with GUIs and handle/manipulate data. This complexity also adds to the scope of the project. With all of these factors mentioned above it can be said that the goal of producing a program of sufficent scope and complexity have been fulfilled.
+
+### Alternative Approaches
+
+As always there are an infinite way to build a software that is this open ended in its design. A few major alternative approaches do come to mind. The response generation could have been handled in a single function instead of handling the action and regular responses seperately. The reason this was not done was so that the subject could effectievely be utilised as a bus for multiple streams to adhere to the requirements above.
+
+The use of the `Pair` record might be overused in that it sometimes could prove clearer code to create a few more specific records to hold special pairs such as the output pair, but the type parameterization helps with this a bit.
+
+The choice of where to use observables and where to utilise streams could also be altered, it could just as well be that only the input and chat engine utilises observables/observers and the other functions uses streams since these are "mapper" functions, I.E. used in map as intermediate function. The choice was still made to keep all public interfaces using observable/observers/maybe and so on and keep the private functions functional with streams.
+
+The conversation state is handled through subjects to keep track of the current conversation state and the input from the user, this could also have been done using a recursive function in where the function calls itself to continue the conversation. Since this feature was added later in the program it was deemed easier to follow a method more similar to how the chat context is currently handled, with subjects. So this was the chosen approach for this part of the program and fit well into the current design of the program where the recursive approach probably would have been harder to fit together with the current design.
+
+## Personal Reflections
+
+I found this to be a very challenging project where a lot of time was needed for planning and just thinking about the solution as a whole. Especially the design of how the data should flow through the system was hard, that coupled with implementing all these requirements made it even more of a difficulty. I did however found it rewarding and the use of functional programming was especially satisfying when I got it right. I did not implement a whole lot of tests but for those I did I found it especially nice where functions always return the same value for the same input and side effect are non existant wich made the testing much more pleasent and easier. The tests were removed when working on producing a working jar since the way to access the database changed to include class loaders I sadly did not have the time to make the changes required in the tests, so that is why they are not present now. Overall, I learned a lot from this project and feel more confident in reactive programming and the functional paradigm which I will definitely utilise in future projects where appropriate.
