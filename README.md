@@ -16,7 +16,7 @@ The practical work of this project was performed on a HP-laptop with Windows 11.
 
 The purpose of this project is to develop a simple chat bot using a declarative approach to writing code. More specifically the code should adhere to reactive and functional programming principles. To achieve this the the use of streams will be utilised for the functional code and for the reactive code RxJava will be utilised.
 
-This solution aims for the C-grade and below are 12 requirements that each should be fulfilled, the requirements are taken and somewhat rewritten from the project description.  
+Below are 12 requirements that each should be fulfilled, the requirements are taken and somewhat rewritten from the project description.  
 
 List of the concrete goals for this project:
 
