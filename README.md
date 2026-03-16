@@ -1,5 +1,5 @@
 # Overview
-School project in course about reactive programming. The program is a simple chatbot implemented with reactive principles such as observer/observable, RxJava operations and more. The chatbot is written with RxJava and has a GUI created with SWing. Below are some screenshots and a detailed report about the purpose and implementation of the project.
+School project in course about reactive programming. The program is a simple chatbot implemented with reactive principles such as observer/observable, RxJava operations and more. The chatbot is written with RxJava and has a GUI created with Swing. Below are some screenshots and a detailed report about the purpose and implementation of the project.
 
 # Screenshots
 
